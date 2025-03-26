@@ -4,6 +4,12 @@ const express = require('express')
 const app = express()
 const port = 4000
 
+const data = {
+    name: 'Amit',
+    age: 30,
+    city: 'Delhi'
+}
+
 app.get('/', (req, res) => {
   res.send('Hello World!')
 })
@@ -18,6 +24,10 @@ app.get('/login',(req,res)=>{
 
 app.get('/brg',(req,res)=>{
     res.send('hello ji kaisa ho')
+})
+
+app.get('/data',(req,res)=>{
+    res.json(data)
 })
 
 app.listen(port, () => {
